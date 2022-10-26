@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: "myaks2cluster-da87"
+    labels:
+        app: "myaks2cluster-da87"
+spec:
+    type: LoadBalancer
+    ports:
+    - port: 8123
+      targetPort: 8123
+      protocol: TCP
+      name: http
+    selector:
+        app: "myaks2cluster-da87"
